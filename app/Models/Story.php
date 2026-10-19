@@ -6,5 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Story extends Model
 {
-    //
+    protected $fillable = [
+        'slug',
+        'category',
+        'title',
+        'published_date',
+        'description',
+        'image_path'
+    ];
 }

@@ -5,6 +5,7 @@ use App\Http\Controllers\SubscriberController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ApplicationController;
+use App\Http\Controllers\StoryController;
 use App\Http\Controllers\VendorCategoryController;
 
 Route::get('/user', function (Request $request) {
@@ -24,3 +25,9 @@ Route::put('/applications/{id}/accept', [ApplicationController::class, 'accept']
 Route::put('/applications/{id}/reject', [ApplicationController::class, 'reject']);
 
 Route::apiResource('vendor-categories', VendorCategoryController::class);
+
+Route::get('/stories', [StoryController::class, 'index']);
+Route::get('/stories/{slug}', [StoryController::class, 'show']);
+Route::post('/stories', [StoryController::class, 'store']);
+Route::put('/stories/{id}', [StoryController::class, 'update']);
+Route::delete('/stories/{id}', [StoryController::class, 'destroy']);
