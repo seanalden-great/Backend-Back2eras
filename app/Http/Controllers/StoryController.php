@@ -38,7 +38,7 @@ class StoryController extends Controller
             'published_date' => 'required|date',
             'description'    => 'required|string',
             'image_file'     => 'nullable|image|max:5120', // Maksimal 5MB
-            'image_path'     => 'required|string', // Bisa berupa URL Unsplash
+            'image_path'     => 'nullable|string', // Bisa berupa URL Unsplash
         ]);
 
         // Otomatis membuat slug dari judul (Contoh: "Halo Dunia" -> "halo-dunia")
