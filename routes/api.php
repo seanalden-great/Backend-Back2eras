@@ -35,3 +35,4 @@ Route::delete('/stories/{id}', [StoryController::class, 'destroy']);
 Route::get('/contacts', [ContactController::class, 'index']);
 Route::post('/contacts', [ContactController::class, 'store']);
 Route::delete('/contacts/{id}', [ContactController::class, 'destroy']);
+Route::post('/contacts/{id}/reply', [ContactController::class, 'reply']);
