@@ -31,3 +31,7 @@ Route::get('/stories/{slug}', [StoryController::class, 'show']);
 Route::post('/stories', [StoryController::class, 'store']);
 Route::put('/stories/{id}', [StoryController::class, 'update']);
 Route::delete('/stories/{id}', [StoryController::class, 'destroy']);
+
+Route::get('/contacts', [ContactController::class, 'index']);
+Route::post('/contacts', [ContactController::class, 'store']);
+Route::delete('/contacts/{id}', [ContactController::class, 'destroy']);
