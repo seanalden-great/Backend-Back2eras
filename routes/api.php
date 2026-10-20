@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ApplicationController;
 use App\Http\Controllers\StoryController;
 use App\Http\Controllers\VendorCategoryController;
+use App\Http\Controllers\VisitorController;
 
 Route::get('/user', function (Request $request) {
     return $request->user();
@@ -36,3 +37,8 @@ Route::get('/contacts', [ContactController::class, 'index']);
 Route::post('/contacts', [ContactController::class, 'store']);
 Route::delete('/contacts/{id}', [ContactController::class, 'destroy']);
 Route::post('/contacts/{id}/reply', [ContactController::class, 'reply']);
+
+// Route untuk Visitor Registration
+Route::get('/visitors', [VisitorController::class, 'index']);
+Route::post('/visitors', [VisitorController::class, 'store']);
+Route::delete('/visitors/{id}', [VisitorController::class, 'destroy']);
