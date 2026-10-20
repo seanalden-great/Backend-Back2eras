@@ -59,6 +59,7 @@ return [
             // 'throw' => false,
             'throw' => true, // PENTING: Ubah jadi true agar error S3 yang asli muncul di Vercel
             'report' => false,
+            'visibility' => 'public', // TAMBAHKAN BARIS INI
         ],
 
     ],

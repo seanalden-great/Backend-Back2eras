@@ -169,7 +169,7 @@ class StoryController extends Controller
 
         // LOGIKA S3 UNTUK STORY
         if ($request->hasFile('image_file')) {
-            $path = $request->file('image_file')->store('stories', 's3');
+            $path = $request->file('image_file')->storePublicly('stories', 's3');
 
             if (!$path) {
                 return response()->json(['message' => 'Gagal mengupload gambar ke S3. Pastikan ukuran gambar < 2MB.'], 500);
@@ -195,7 +195,7 @@ class StoryController extends Controller
 
         // LOGIKA S3 UNTUK STORY
         if ($request->hasFile('image_file')) {
-            $path = $request->file('image_file')->store('stories', 's3');
+            $path = $request->file('image_file')->storePublicly('stories', 's3');
 
             if (!$path) {
                 return response()->json(['message' => 'Gagal mengupload gambar ke S3. Pastikan ukuran gambar < 2MB.'], 500);
