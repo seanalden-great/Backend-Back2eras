@@ -56,7 +56,8 @@ return [
             'url' => env('AWS_URL'),
             'endpoint' => env('AWS_ENDPOINT'),
             'use_path_style_endpoint' => env('AWS_USE_PATH_STYLE_ENDPOINT', false),
-            'throw' => false,
+            // 'throw' => false,
+            'throw' => true, // PENTING: Ubah jadi true agar error S3 yang asli muncul di Vercel
             'report' => false,
         ],
 
