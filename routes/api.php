@@ -5,6 +5,7 @@ use App\Http\Controllers\SubscriberController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ApplicationController;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\MediaController;
 use App\Http\Controllers\PartnerController;
 use App\Http\Controllers\StoryController;
@@ -63,3 +64,13 @@ Route::get('/media', [MediaController::class, 'index']);
 Route::post('/media', [MediaController::class, 'store']);
 Route::put('/media/{id}/status', [MediaController::class, 'updateStatus']); 
 Route::delete('/media/{id}', [MediaController::class, 'destroy']);
+
+// Auth Routes (Terbuka untuk Login & Forgot Password)
+Route::post('/login', [AuthController::class, 'login']);
+Route::post('/forgot-password', [AuthController::class, 'forgotPassword']);
+
+// Auth Routes (Hanya bisa diakses jika sudah punya Token / Sudah Login)
+Route::middleware('auth:sanctum')->group(function () {
+    Route::post('/logout', [AuthController::class, 'logout']);
+    Route::put('/profile', [AuthController::class, 'updateProfile']);
+});
