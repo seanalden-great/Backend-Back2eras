@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ApplicationController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\MediaController;
 use App\Http\Controllers\PartnerController;
 use App\Http\Controllers\StoryController;
@@ -74,3 +75,5 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('/logout', [AuthController::class, 'logout']);
     Route::put('/profile', [AuthController::class, 'updateProfile']);
 });
+
+Route::get('/dashboard/stats', [DashboardController::class, 'getStats']);
