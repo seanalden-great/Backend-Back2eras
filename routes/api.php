@@ -5,6 +5,7 @@ use App\Http\Controllers\SubscriberController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ApplicationController;
+use App\Http\Controllers\PartnerController;
 use App\Http\Controllers\StoryController;
 use App\Http\Controllers\TenantController;
 use App\Http\Controllers\VendorCategoryController;
@@ -49,3 +50,9 @@ Route::get('/tenants', [TenantController::class, 'index']);
 Route::post('/tenants', [TenantController::class, 'store']);
 Route::put('/tenants/{id}/status', [TenantController::class, 'updateStatus']); // Untuk admin merubah status
 Route::delete('/tenants/{id}', [TenantController::class, 'destroy']);
+
+// Route untuk Partnership
+Route::get('/partners', [PartnerController::class, 'index']);
+Route::post('/partners', [PartnerController::class, 'store']);
+Route::put('/partners/{id}/status', [PartnerController::class, 'updateStatus']); 
+Route::delete('/partners/{id}', [PartnerController::class, 'destroy']);
