@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ApplicationController;
 use App\Http\Controllers\StoryController;
+use App\Http\Controllers\TenantController;
 use App\Http\Controllers\VendorCategoryController;
 use App\Http\Controllers\VisitorController;
 
@@ -42,3 +43,9 @@ Route::post('/contacts/{id}/reply', [ContactController::class, 'reply']);
 Route::get('/visitors', [VisitorController::class, 'index']);
 Route::post('/visitors', [VisitorController::class, 'store']);
 Route::delete('/visitors/{id}', [VisitorController::class, 'destroy']);
+
+// Route untuk Tenant Registration
+Route::get('/tenants', [TenantController::class, 'index']);
+Route::post('/tenants', [TenantController::class, 'store']);
+Route::put('/tenants/{id}/status', [TenantController::class, 'updateStatus']); // Untuk admin merubah status
+Route::delete('/tenants/{id}', [TenantController::class, 'destroy']);
