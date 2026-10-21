@@ -5,6 +5,7 @@ use App\Http\Controllers\SubscriberController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ApplicationController;
+use App\Http\Controllers\MediaController;
 use App\Http\Controllers\PartnerController;
 use App\Http\Controllers\StoryController;
 use App\Http\Controllers\TenantController;
@@ -56,3 +57,9 @@ Route::get('/partners', [PartnerController::class, 'index']);
 Route::post('/partners', [PartnerController::class, 'store']);
 Route::put('/partners/{id}/status', [PartnerController::class, 'updateStatus']); 
 Route::delete('/partners/{id}', [PartnerController::class, 'destroy']);
+
+// Route untuk Media Partnership
+Route::get('/media', [MediaController::class, 'index']);
+Route::post('/media', [MediaController::class, 'store']);
+Route::put('/media/{id}/status', [MediaController::class, 'updateStatus']); 
+Route::delete('/media/{id}', [MediaController::class, 'destroy']);
